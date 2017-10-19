@@ -21,6 +21,10 @@ class ChargesController < ApplicationController
     current_user.paid = true
     current_user.save
 
+    @from_email = params[:stripeEmail]
+    PaymentMailer.payment_confirmation(@from_email).deliver_now
+
+
   rescue Stripe::CardError => e
     flash[:error] = e.message
     redirect_to 'houses/index'
