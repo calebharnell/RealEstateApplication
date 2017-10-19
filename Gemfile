@@ -5,6 +5,9 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'mailgun-ruby', '~>1.1.6'
+gem 'stripe'
+gem 'dotenv-rails', groups: [:development, :test]
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
 gem 'devise'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
