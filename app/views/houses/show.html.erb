@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @house.photo.url %>
+
+<p>
+  <strong>User:</strong>
+  <%= @house.user.email %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @house.description %>
+</p>
+
+<p>
+  <strong>Property type:</strong>
+  <%= @house.property_type %>
+</p>
+
+<p>
+  <strong>Bedrooms:</strong>
+  <%= @house.bedrooms %>
+</p>
+
+<p>
+  <strong>Bathrooms:</strong>
+  <%= @house.bathrooms %>
+</p>
+
+<p>
+  <strong>Parking:</strong>
+  <%= @house.parking %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @house.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @house.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @house.state %>
+</p>
+
+<p>
+  <strong>Postcode:</strong>
+  <%= @house.postcode %>
+</p>
+
+<p>
+  <strong>Country:</strong>
+  <%= @house.country %>
+</p>
+
+<%= link_to 'Edit', edit_house_path(@house) %> |
+<%= link_to 'Back', houses_path %>

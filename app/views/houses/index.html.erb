@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Houses</h1>
+
+
+    <% @houses.each do |house| %>
+        <%= image_tag house.photo.url %>
+        <%= house.user.email %>
+        <%= house.description %>
+        <%= house.property_type %>
+        <%= house.bedrooms %>
+        <%= house.bathrooms %>
+        <%= house.parking %>
+        <%= house.address %>
+        <%= house.city %>
+        <%= house.state %>
+        <%= house.postcode %>
+        <%= house.country %>
+        <%= link_to 'Show', house %>
+        <% if house.user == current_user %>
+        <%= link_to 'Edit', edit_house_path(house) %>
+        <%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+    <% end %>
+
+<br>
+
+<%= link_to 'New House', new_house_path %>
