@@ -57,5 +57,13 @@
   <%= @house.country %>
 </p>
 
+<iframe
+  width="600"
+  height="450"
+  frameborder="0" style="border:0"
+  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyACoAriN0eYQHOjyTi1B7kpCmafJckpxqI
+    &q=<%= @house.full_address %>" allowfullscreen>
+</iframe><br><br>
+
 <%= link_to 'Edit', edit_house_path(@house) %> |
 <%= link_to 'Back', houses_path %>
