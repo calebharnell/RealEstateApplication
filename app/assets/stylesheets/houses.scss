@@ -1,3 +1,34 @@
 // Place all the styles related to the Houses controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.listing {
+  background-color: #F4F4F4;
+  margin: 20px 20px 20px 20px;
+  border-radius: 10px;
+  box-shadow:  10px 10px 5px #757575;
+}
+
+.listing-photo {
+  padding: 20px;
+}
+
+.photo {
+  border-radius: 10px;
+}
+
+.listing-text {
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.field {
+  margin-bottom: 15px;
+}
+
+.actions {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}

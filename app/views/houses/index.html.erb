@@ -1,28 +1,28 @@
+<div class="container-fluid">
 <p id="notice"><%= notice %></p>
 
-<h1>Houses</h1>
-
+<h5><%= link_to 'Add a New Listing', new_house_path %></h5>
 
     <% @houses.each do |house| %>
-        <%= image_tag(house.photo.url, size: "600x400") %><br>
-        <%= house.user.email %>
-        <%= house.description %>
-        <%= house.property_type %>
-        <%= house.bedrooms %>
-        <%= house.bathrooms %>
-        <%= house.parking %>
-        <%= house.address %>
-        <%= house.city %>
-        <%= house.state %>
-        <%= house.postcode %>
-        <%= house.country %><br>
-        <%= link_to 'Show', house %><br>
-        <% if house.user == current_user %>
-        <%= link_to 'Edit', edit_house_path(house) %>
-        <%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %><br>
-        <% end %>
+      <div class="row listing">
+        <div class="col-md-6 listing-photo">
+          <%= link_to image_tag(house.photo.url, size: "600x400", class: "photo img-fluid"), house %><br>
+        </div>
+        <div class="col-md-6 listing-text">
+          <div>
+          <h4><%= house.address %>, <%= house.city %>  <%= house.state %>  <%= house.postcode %> <%= house.country %></h4><br>
+          <h4><%= house.property_type %></h4><br>
+          <h5>Bedrooms: <%= house.bedrooms %> | Bathrooms: <%= house.bathrooms %> | Parking: <%= house.parking %></h5><br>
+          <h6>Listed by: <%= house.user.email %></h6>
+          <% if house.user == current_user %>
+            <p><%= link_to 'Edit', edit_house_path(house) %> | <%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %><br></p>
+          <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
 
 <br>
 
-<%= link_to 'New House', new_house_path %>
+
+</div>

@@ -1,5 +1,7 @@
-<h1>New House</h1>
+<div class="container-fluid">
+  <h1>Add a new listing</h1>
 
-<%= render 'form', house: @house %>
+  <h5><%= link_to 'Back', houses_path %></h5><br><br>
 
-<%= link_to 'Back', houses_path %>
+  <%= render 'form', house: @house %>
+</div>
