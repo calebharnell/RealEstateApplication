@@ -1,10 +1,22 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Houses</h1>
+<h1>Houses List</h1>
+
+<div class="media">
+  <% @houses.each do |house| %>
+  <img class="d-flex align-self-center mr-3" <%= image_tag(house.photo.url, size: "600x400") %>
+  <div class="media-body">
+    <h5 class="mt-0">
+      <%= house.property_type %>
+      <%= image_tag "icon-bed.png", size: "60x60", alt: "bedroom icon" %>house.bedrooms %>
+      <%= image_tag "bath_icon.png", size: "60x60", alt: "bathroom icon" %>house.bathrooms %>
+      <%= image_tag "car_icon.png", size: "60x60", alt: "parking icon" %>house.parking %>
+
+  </div>
+</div>
 
 
-    <% @houses.each do |house| %>
-        <%= image_tag(@house.photo.url, size: "400x400") %>
+        <%= image_tag(house.photo.url, size: "600x400") %><br>
         <%= house.user.email %>
         <%= house.description %>
         <%= house.property_type %>
@@ -25,4 +37,4 @@
 
 <br>
 
-<%= link_to 'New House', new_house_path %>
+<%= link_to 'Upload Your House', new_house_path %>
