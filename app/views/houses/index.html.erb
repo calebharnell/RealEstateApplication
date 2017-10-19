@@ -4,7 +4,7 @@
 
 
     <% @houses.each do |house| %>
-        <%= image_tag house.photo.url %>
+        <%= image_tag(house.photo.url, size: "600x400") %><br>
         <%= house.user.email %>
         <%= house.description %>
         <%= house.property_type %>
@@ -15,11 +15,11 @@
         <%= house.city %>
         <%= house.state %>
         <%= house.postcode %>
-        <%= house.country %>
-        <%= link_to 'Show', house %>
+        <%= house.country %><br>
+        <%= link_to 'Show', house %><br>
         <% if house.user == current_user %>
         <%= link_to 'Edit', edit_house_path(house) %>
-        <%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %><br>
         <% end %>
     <% end %>
 

@@ -1,7 +1,19 @@
 class HousesController < ApplicationController
   before_action :pay
-  before_action :set_house, only: [:show, :edit, :update, :destroy]
+  before_action :set_house, only: [:enquiry, :enquirycomplete, :show, :edit, :update, :destroy]
 
+  def enquirycomplete
+    @message = params[:message]
+    @from_email = current_user.email
+    @to_email = @house.user.email
+
+    EnquiryMailer.enquiry_notification(@from_email, @to_email, @message).deliver_now
+  end
+
+
+  def enquiry
+
+  end
   # GET /houses
   # GET /houses.json
   def index
@@ -11,6 +23,7 @@ class HousesController < ApplicationController
   # GET /houses/1
   # GET /houses/1.json
   def show
+
   end
 
   # GET /houses/new
@@ -69,7 +82,7 @@ class HousesController < ApplicationController
         render 'charges/new'
       end
     end
-    
+
     # Use callbacks to share common setup or constraints between actions.
     def set_house
       @house = House.find(params[:id])

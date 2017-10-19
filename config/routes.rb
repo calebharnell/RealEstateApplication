@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  get 'charges/new'
-
-  get 'charges/create'
-
   root 'houses#index'
+  get 'houses/:id/enquiry', to: 'houses#enquiry', as: 'enquiry'
+  get 'houses/:id/enquirycomplete', to: 'houses#enquirycomplete', as: 'enquirycomplete'
+  post 'houses/:id/enquirycomplete', to: 'houses#enquirycomplete'
+  get 'charges/new'
+  get 'charges/create'
   devise_for :users, controllers: { registrations: 'registrations' }
   resources :houses, :charges
 

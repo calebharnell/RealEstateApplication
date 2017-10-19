@@ -1,0 +1,21 @@
+
+<%= link_to 'Back to listing', @house %>
+
+<%= form_with(url: enquirycomplete_path, local: true) do |f| %>
+
+  <% if @errors.present? %>
+  <% @errors.each do |e| %>
+    <div class="error">
+      <%= e %>
+    </div>
+    <% end %>
+  <% end %><br><br>
+
+  <div>
+    <%= f.label :message %><br>
+    <%= f.text_area :message %>
+  </div><br>
+
+  <%= f.submit 'Send!' %>
+
+<% end %>
