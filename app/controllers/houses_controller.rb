@@ -1,4 +1,5 @@
 class HousesController < ApplicationController
+  before_action :pay
   before_action :set_house, only: [:show, :edit, :update, :destroy]
 
   # GET /houses
@@ -62,6 +63,13 @@ class HousesController < ApplicationController
   end
 
   private
+
+    def pay
+      if current_user.paid == false
+        render 'charges/new'
+      end
+    end
+    
     # Use callbacks to share common setup or constraints between actions.
     def set_house
       @house = House.find(params[:id])
