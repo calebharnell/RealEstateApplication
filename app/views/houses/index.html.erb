@@ -4,7 +4,7 @@
 
 
     <% @houses.each do |house| %>
-        <%= image_tag house.photo.url %>
+        <%= image_tag(@house.photo.url, size: "400x400") %>
         <%= house.user.email %>
         <%= house.description %>
         <%= house.property_type %>
