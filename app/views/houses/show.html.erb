@@ -1,71 +1,52 @@
-<p id="notice"><%= notice %></p>
+<div class="container-fluid">
+  <p id="notice"><%= notice %></p>
 
-<%= link_to "Enquire about this property", enquiry_path %><br>
 
-<%= image_tag @house.photo.url %>
+    <h5><%= link_to 'Back', houses_path %></h5>
+  <% if @house.user == current_user %>
+    <h5><%= link_to 'Edit', edit_house_path(@house) %> | <%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %></h5>
+  <% end %>
 
-<p>
-  <strong>User:</strong>
-  <%= @house.user.email %>
-</p>
 
-<p>
-  <strong>Description:</strong>
-  <%= @house.description %>
-</p>
+  <%= image_tag(@house.photo.url, size: "600x400") %>
+  <br><br>
+  <p>
+    <strong>Bedrooms: </strong><%= @house.bedrooms %> | <strong>Bathrooms: </strong><%= @house.bathrooms %> | <strong>Parking: </strong><%= @house.parking %>
+  </p>
 
-<p>
-  <strong>Property type:</strong>
-  <%= @house.property_type %>
-</p>
+  <p>
+    <%= @house.address %><%= @house.city %> <%= @house.state %> <%= @house.postcode %> <%= @house.country %>
+  </p>
 
-<p>
-  <strong>Bedrooms:</strong>
-  <%= @house.bedrooms %>
-</p>
+  <p>
+    <strong>Property type:</strong>
+    <%= @house.property_type %>
+  </p>
 
-<p>
-  <strong>Bathrooms:</strong>
-  <%= @house.bathrooms %>
-</p>
+  <p>
+    <%= @house.description %>
+  </p>
 
-<p>
-  <strong>Parking:</strong>
-  <%= @house.parking %>
-</p>
 
-<p>
-  <strong>Address:</strong>
-  <%= @house.address %>
-</p>
 
-<p>
-  <strong>City:</strong>
-  <%= @house.city %>
-</p>
+  <p>
+    <strong>Owner: </strong><%= @house.user.first_name %> <%= @house.user.last_name %>
+  </p>
 
-<p>
-  <strong>State:</strong>
-  <%= @house.state %>
-</p>
+  <p>
+    <%= @house.user.email %>
+  </p>
 
-<p>
-  <strong>Postcode:</strong>
-  <%= @house.postcode %>
-</p>
+  <div class="contact">
+    <h5><%= link_to "Contact Owner", enquiry_path %></h5>
+  </div>
 
-<p>
-  <strong>Country:</strong>
-  <%= @house.country %>
-</p>
+  <iframe
+    width="600"
+    height="450"
+    frameborder="0" style="border:0"
+    src="https://www.google.com/maps/embed/v1/place?key=AIzaSyACoAriN0eYQHOjyTi1B7kpCmafJckpxqI
+      &q=<%= @house.full_address %>" allowfullscreen>
+  </iframe><br><br>
 
-<iframe
-  width="600"
-  height="450"
-  frameborder="0" style="border:0"
-  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyACoAriN0eYQHOjyTi1B7kpCmafJckpxqI
-    &q=<%= @house.full_address %>" allowfullscreen>
-</iframe><br><br>
-
-<%= link_to 'Edit', edit_house_path(@house) %> |
-<%= link_to 'Back', houses_path %>
+</div>

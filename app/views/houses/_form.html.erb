@@ -1,72 +1,77 @@
-<%= form_with(model: house, local: true) do |form| %>
-  <% if house.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(house.errors.count, "error") %> prohibited this house from being saved:</h2>
+<div class="container-fluid">
 
-      <ul>
-      <% house.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <%= form_with(model: house, local: true) do |form| %>
+        <% if house.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(house.errors.count, "error") %> prohibited this house from being saved:</h2>
+
+            <ul>
+            <% house.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="field">
+          <%= form.label :description %><br>
+          <%= form.text_area :description, id: :house_description %>
+        </div>
+
+        <div class="field">
+          <%= form.label :property_type %><br>
+          <%= form.select :property_type, ['House', 'Unit', 'Townhouse'], id: :property_type %>
+        </div>
+
+        <div class="field">
+          <%= form.label :bedrooms %><br>
+          <%= form.select :bedrooms, [ 1, 2, 3, 4, 5 ], id: :house_bedrooms %>
+        </div>
+
+        <div class="field">
+          <%= form.label :bathrooms %><br>
+          <%= form.select :bathrooms, [ 1, 2, 3, 4, 5 ], id: :house_bathrooms %>
+        </div>
+
+        <div class="field">
+          <%= form.label :parking %><br>
+          <%= form.select :parking, [ 1, 2, 3, 4, 5 ], id: :house_parking %>
+        </div>
+
+        <div class="field">
+          <%= form.label :address %><br>
+          <%= form.text_field :address, id: :house_address %>
+        </div>
+
+        <div class="field">
+          <%= form.label :city %><br>
+          <%= form.text_field :city, id: :house_city %>
+        </div>
+
+        <div class="field">
+          <%= form.label :state %><br>
+          <%= form.select :state, ['QLD', 'NSW', 'VIC', 'SA', "WA", 'TAS', 'ACT', 'NT'], id: :house_state %>
+        </div>
+
+        <div class="field">
+          <%= form.label :postcode %><br>
+          <%= form.text_field :postcode, id: :house_postcode %>
+        </div>
+
+        <div class="field">
+          <%= form.label :country %><br>
+          <%= form.select :country, ['Australia'], id: :house_country %>
+        </div>
+
+        <div class="field">
+          <%= form.label "Upload House Photo" %><br>
+          <%= form.file_field :photo %>
+        </div>
+
+        <div class="actions">
+          <%= form.submit %>
+        </div>
+
       <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description, id: :house_description %>
-  </div>
-
-  <div class="field">
-    <%= form.label :property_type %>
-    <%= form.select :property_type, ['House', 'Unit', 'Townhouse'], id: :property_type %>
-  </div>
-
-  <div class="field">
-    <%= form.label :bedrooms %>
-    <%= form.select :bedrooms, [ 1, 2, 3, 4, 5 ], id: :house_bedrooms %>
-  </div>
-
-  <div class="field">
-    <%= form.label :bathrooms %>
-    <%= form.select :bathrooms, [ 1, 2, 3, 4, 5 ], id: :house_bathrooms %>
-  </div>
-
-  <div class="field">
-    <%= form.label :parking %>
-    <%= form.select :parking, [ 1, 2, 3, 4, 5 ], id: :house_parking %>
-  </div>
-
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address, id: :house_address %>
-  </div>
-
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city, id: :house_city %>
-  </div>
-
-  <div class="field">
-    <%= form.label :state %>
-    <%= form.text_field :state, id: :house_state %>
-  </div>
-
-  <div class="field">
-    <%= form.label :postcode %>
-    <%= form.text_field :postcode, id: :house_postcode %>
-  </div>
-
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country, id: :house_country %>
-  </div>
-
-  <div class="field">
-    <%= form.label "Upload House Photo" %>
-    <%= form.file_field :photo %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
