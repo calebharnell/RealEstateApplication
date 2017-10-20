@@ -23,7 +23,7 @@ class HousesController < ApplicationController
   # GET /houses/1
   # GET /houses/1.json
   def show
-
+    @house.punch(request)
   end
 
   # GET /houses/new
