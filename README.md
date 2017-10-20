@@ -21,4 +21,5 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+![This is the landing page](/app/assets/images/Screen_shot1.png)
+![This is the show page](app/assets/images/Screen_shot2.png)
