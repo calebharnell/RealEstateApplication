@@ -12,7 +12,7 @@
           <div>
           <h4><%= house.address %>, <%= house.city %>  <%= house.state %>  <%= house.postcode %> <%= house.country %></h4><br>
           <h4><%= house.property_type %></h4><br>
-          <h5>Bedrooms: <%= house.bedrooms %> | Bathrooms: <%= house.bathrooms %> | Parking: <%= house.parking %></h5><br>
+          <h5><%= image_tag "icon-bed.png", size: "50x50" %><%= house.bedrooms %> | <%= image_tag "bath_icon.png", size: "50x50" %> <%= house.bathrooms %> | <%= image_tag "car_icon.png", size: "50x50" %><%= house.parking %></h5><br>
           <h6>Listed by: <%= house.user.email %></h6>
           <% if house.user == current_user %>
             <p><%= link_to 'Edit', edit_house_path(house) %> | <%= link_to 'Destroy', house, method: :delete, data: { confirm: 'Are you sure?' } %><br></p>
