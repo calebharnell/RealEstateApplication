@@ -1,9 +1,11 @@
 # README
+HOMEVIEW
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app was designed in 1 1/2 days as part of a Hackathon.
 
-Things you may want to cover:
+It is a design of a real estate app that matches a buyers needs to HomeView.
+
+It then matches the user’s wish list  with homes for sale in the database. 
 
 * Ruby version
 
