@@ -1,5 +1,5 @@
 # README
-Deployed on heroku:(https://home-view.herokuapp.com)
+Deployed on heroku: (https://home-view.herokuapp.com)
 
 
 This app was designed in 1 1/2 days as part of a Hackathon.
