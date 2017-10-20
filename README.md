@@ -18,3 +18,6 @@ STRIPE_SECRET_KEY=
 
 ![This is the landing page](/app/assets/images/Screen_shot1.png)
 ![This is the show page](app/assets/images/Screen_shot2.png)
+![This is the ERD](app/assets/images/erd.png)
+![This is the UI](app/assets/images/erd2.png)
+![This is the UI](app/assets/images/UI.png)
