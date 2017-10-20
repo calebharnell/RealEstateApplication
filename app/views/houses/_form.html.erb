@@ -1,6 +1,4 @@
-<div class="container-fluid">
-
-      <%= form_with(model: house, local: true) do |form| %>
+<%= form_with(model: house, local: true) do |form| %>
         <% if house.errors.any? %>
           <div id="error_explanation">
             <h2><%= pluralize(house.errors.count, "error") %> prohibited this house from being saved:</h2>
@@ -73,5 +71,3 @@
         </div>
 
       <% end %>
-
-</div>

@@ -15,7 +15,7 @@
   </p>
 
   <p>
-    <%= @house.address %><%= @house.city %> <%= @house.state %> <%= @house.postcode %> <%= @house.country %>
+    <%= @house.address %>, <%= @house.city %> <%= @house.state %> <%= @house.postcode %> <%= @house.country %>
   </p>
 
   <p>
@@ -49,4 +49,6 @@
       &q=<%= @house.full_address %>" allowfullscreen>
   </iframe><br><br>
 
+
+Number of views: <%= @house.hits %><br>
 </div>
