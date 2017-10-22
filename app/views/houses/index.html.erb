@@ -6,7 +6,7 @@
     <% @houses.each do |house| %>
       <div class="row listing">
         <div class="col-md-6 listing-photo">
-          <%= link_to image_tag(house.photo.url, size: "600x400", class: "photo img-fluid"), house %><br>
+          <%= link_to image_tag(house.photo.url(:medium), size: "400x400", class: "photo img-fluid"), house %><br>
         </div>
         <div class="col-md-6 listing-text">
           <div>
